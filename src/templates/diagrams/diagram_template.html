@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="page-header">
+        <h1>Diagrams <small>Displaying L3 sequence diagram</small></h1>
+    </div>
+
+    <div class="list-group">
+    {% for transaction in trn_list %}
+        <a href="#" class="list-group-item">
+            <h4 class="list-group-item-heading">Message <strong>{{transaction.message}}</strong> sent by {{ transaction.sender }} to {{ transaction.receiver }}</h4>
+            <p class="list-group-item-text">Message received by <strong>{{ transaction.receiver }}</strong></p>
+        </a>
+    {% endfor %}
+    </div>
+
+{% endblock %}
