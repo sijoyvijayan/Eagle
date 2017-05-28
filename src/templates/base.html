@@ -29,12 +29,20 @@
             {% if session['email'] %}
                 <ul class="nav navbar-nav navbar-right">
 
-                    <li><a href="{{ url_for('diagrams.display_sequence_diagram') }}"><i class="fa fa-exchange" aria-hidden="true"></i> Sequence Diagram</a></li>
+                    <li><a href="#"><i class="fa fa-exchange" aria-hidden="true"></i> Sequence Diagram</a></li>
                     <li><a href="{{ url_for('users.logout_user') }}"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="{{ url_for('diagrams.display_ue_ids_l3_logs') }}"><i class="fa fa-exchange" aria-hidden="true"></i> show_ue_ids</a></li>
+                    <li><a href="{{ url_for('users.login_user') }}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                 </ul>
             {% else %}
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="{{ url_for('diagrams.display_sequence_diagram') }}"><i class="fa fa-exchange" aria-hidden="true"></i> Sequence Diagram</a></li>
+                    <li><a href="#"><i class="fa fa-exchange" aria-hidden="true"></i> Sequence Diagram</a></li>
+                    <li><a href="{{ url_for('users.login_user') }}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-left">
+                    <li><a href="{{ url_for('diagrams.display_ue_ids_l3_logs') }}"><i class="fa fa-exchange" aria-hidden="true"></i> show_ue_ids</a></li>
                     <li><a href="{{ url_for('users.login_user') }}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                 </ul>
             {% endif %}
